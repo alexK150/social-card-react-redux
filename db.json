@@ -1,0 +1,22 @@
+{
+  "card": {
+    "id": 1,
+    "likes": 0,
+    "dislikes": 0,
+    "shares": 0,
+    "comments": [
+      {
+        "id": 1,
+        "commentText": "This picture is awesome"
+      },
+      {
+        "id": 2,
+        "commentText": "Hello"
+      },
+      {
+        "id": 3,
+        "commentText": "How are you?"
+      }
+    ]
+  }
+}

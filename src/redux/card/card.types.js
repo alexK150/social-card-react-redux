@@ -1,0 +1,6 @@
+export const CardActionTypes = {
+    TOGGLE_LIKE: 'TOGGLE_LIKE',
+    TOGGLE_DISLIKE: 'TOGGLE_DISLIKE',
+    TOGGLE_SHARE: 'TOGGLE_SHARE',
+    ADD_COMMENT: 'ADD_COMMENT'
+};
