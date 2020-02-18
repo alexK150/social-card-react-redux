@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min';
+import {connect} from 'react-redux';
 
 import backgroundIMG from './assets/orange-bg.jpg';
 import mockUserPicture from './assets/gray.jpg';
 
-
-const App = () => {
+const App = ({card:{status, likes, dislikes, shares, comments}}) => {
     useEffect(() => {
         // Initializes Materialize JS
         M.AutoInit()
@@ -28,18 +28,17 @@ const App = () => {
                         </div>
                     </div>
                     <div className="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
+                        <p>{status}</p>
                         <div style={{float: "right"}}>
                             <a href="#">This is a link</a>
                         </div>
                     </div>
                     <div className="card-action">
                         <ul className='list-of-actions'>
-                            <li onClick={onClickHandler}><i className="material-icons">thumb_up</i> like</li>
-                            <li><i className="material-icons">thumb_down</i>dislike</li>
-                            <li><i className="material-icons">repeat</i>repost</li>
-                            <li><i className="material-icons">chat_bubble_outline</i>comment</li>
+                            <li onClick={onClickHandler}><i className="material-icons">thumb_up</i>{likes}</li>
+                            <li><i className="material-icons">thumb_down</i>{dislikes} </li>
+                            <li><i className="material-icons">repeat</i>{shares}</li>
+                            <li><i className="material-icons">chat_bubble_outline</i>{comments}</li>
                         </ul>
                     </div>
                 </div>
@@ -48,4 +47,8 @@ const App = () => {
     </div>
 };
 
-export default App;
+const mapStateToProps = ({card}) => ({
+    card
+});
+
+export default connect(mapStateToProps)(App);
