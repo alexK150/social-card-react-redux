@@ -1,12 +1,14 @@
 import {CardActionTypes} from './card.types';
 
 const initialState = {
-    id: null,
-    status: 'I am a very simple card. I am good at containing small bits of information.',
-    likes: 0,
-    dislikes: 0,
-    shares: 0,
-    comments: []
+    card: {
+        id: null,
+        status: 'test',
+        likes: 0,
+        dislikes: 0,
+        shares: 0,
+        comments: [{"id": 1, "commentText": "test 1"}, {"id": 2, "commentText": "test 2"}]
+    }
 };
 
 export const CardReducer = (state = initialState, action) =>{

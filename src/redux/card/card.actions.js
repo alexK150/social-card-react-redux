@@ -2,14 +2,16 @@ import axios from 'axios';
 
 import {CardActionTypes} from './card.types';
 
-export const getData = () => dispatch => {
+export const getData = () => async dispatch => {
     try {
-        const data = axios.get('/posts');
+        debugger
+        const res = await axios.get('/posts');
 
         dispatch({
             type: CardActionTypes.GET_DATA,
-            payload: data
+            payload: res.data[0]
         })
+
     } catch (err) {
         console.log(err.message)
     }
